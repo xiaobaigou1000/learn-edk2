@@ -290,6 +290,8 @@
   gEfiMdePkgTokenSpaceGuid.PcdPlatformBootTimeOut|L"Timeout"|gEfiGlobalVariableGuid|0x0|10
 
 [Components]
+MyHelloWorld/MyHelloWorld.inf
+
 !if "IA32" in $(ARCH) || "X64" in $(ARCH)
   !if "MSFT" in $(FAMILY) || $(WIN_HOST_BUILD) == TRUE
     ##
