@@ -291,6 +291,7 @@
 
 [Components]
 MyHelloWorld/MyHelloWorld.inf
+TryGST/trygst.inf
 
 !if "IA32" in $(ARCH) || "X64" in $(ARCH)
   !if "MSFT" in $(FAMILY) || $(WIN_HOST_BUILD) == TRUE
