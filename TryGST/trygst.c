@@ -2,6 +2,7 @@
 #include <Library/UefiApplicationEntryPoint.h>
 #include <Library/UefiLib.h>
 #include <Library/UefiBootServicesTableLib.h>
+#include<Library/DebugLib.h>
 
 EFI_STATUS
 EFIAPI
@@ -18,7 +19,7 @@ UefiMain(
     EFI_STATUS status = gST->ConIn->ReadKeyStroke(gST->ConIn, &key);
     if (EFI_ERROR(status))
     {
-      Print(L"Error reading key\n");
+      DebugPrint(DEBUG_INFO,"Error reading key\n");
     }
     CHAR16 keyPressed[3] = {0};
     keyPressed[1] = '\n';
