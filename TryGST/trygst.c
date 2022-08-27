@@ -12,9 +12,10 @@ UefiMain(
   while (TRUE)
   {
     UINTN index;
-    SystemTable->BootServices->WaitForEvent(1, &SystemTable->ConIn->WaitForKey, &index);
+    
+    gBS->WaitForEvent(1, &gST->ConIn->WaitForKey, &index);
     EFI_INPUT_KEY key;
-    EFI_STATUS status = SystemTable->ConIn->ReadKeyStroke(SystemTable->ConIn, &key);
+    EFI_STATUS status = gST->ConIn->ReadKeyStroke(gST->ConIn, &key);
     if (EFI_ERROR(status))
     {
       Print(L"Error reading key\n");
