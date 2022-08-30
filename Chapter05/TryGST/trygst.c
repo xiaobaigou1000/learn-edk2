@@ -2,7 +2,7 @@
 #include <Library/UefiApplicationEntryPoint.h>
 #include <Library/UefiLib.h>
 #include <Library/UefiBootServicesTableLib.h>
-#include<Library/DebugLib.h>
+#include <Library/DebugLib.h>
 
 EFI_STATUS
 EFIAPI
@@ -13,13 +13,13 @@ UefiMain(
   while (TRUE)
   {
     UINTN index;
-    
+
     gBS->WaitForEvent(1, &gST->ConIn->WaitForKey, &index);
     EFI_INPUT_KEY key;
     EFI_STATUS status = gST->ConIn->ReadKeyStroke(gST->ConIn, &key);
     if (EFI_ERROR(status))
     {
-      DebugPrint(DEBUG_INFO,"Error reading key\n");
+      DebugPrint(DEBUG_INFO, "Error reading key\n");
     }
     CHAR16 keyPressed[3] = {0};
     keyPressed[1] = '\n';
