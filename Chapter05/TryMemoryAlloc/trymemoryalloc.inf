@@ -1,0 +1,17 @@
+[Defines]
+  INF_VERSION = 0x00010005
+  BASE_NAME = TryMemoryAlloc
+  FILE_GUID = a454ade6-2c77-4f7e-ac27-5a38d4589361
+  MODULE_TYPE = UEFI_APPLICATION
+  VERSION_STRING = 1.0
+  ENTRY_POINT = UefiMain
+[Sources]
+  trymemoryalloc.c
+[Packages]
+  MdePkg/MdePkg.dec
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  DebugLib
+  UefiBootServicesTableLib
+  
