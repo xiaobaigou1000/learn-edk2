@@ -48,13 +48,42 @@ EFI_STATUS TestAllocateSpecificAddress()
     return status;
 }
 
+EFI_STATUS TestMap()
+{
+    UINTN memoryMapSize = 0;
+    EFI_MEMORY_DESCRIPTOR *memoryMap = NULL;
+    UINTN mapKey = 0;
+    UINTN descriptorSize = 0;
+    UINT32 descriptorVersion = 0;
+    EFI_STATUS status = gBS->GetMemoryMap(&memoryMapSize, memoryMap, &mapKey, &descriptorSize, &descriptorVersion);
+    if (status != EFI_BUFFER_TOO_SMALL)
+    {
+        return status;
+    }
+
+    status = gBS->AllocatePool(EfiBootServicesData, memoryMapSize, (void **)&memoryMap);
+    status = gBS->GetMemoryMap(&memoryMapSize, memoryMap, &mapKey, &descriptorSize, &descriptorVersion);
+
+    for (int i = 0; i < memoryMapSize / descriptorSize; i++)
+    {
+        EFI_MEMORY_DESCRIPTOR *current = (EFI_MEMORY_DESCRIPTOR *)(((CHAR8 *)memoryMap) + (i * descriptorSize));
+        Print(L"MemoryMap %4d %10d : ", current->Type, current->NumberOfPages);
+        Print(L"%20x<->", current->PhysicalStart);
+        Print(L"%20x \n", current->VirtualStart);
+    }
+    status = gBS->FreePool(memoryMap);
+
+    return status;
+}
+
 EFI_STATUS
 EFIAPI
 UefiMain(
     IN EFI_HANDLE ImageHandle,
     IN EFI_SYSTEM_TABLE *SystemTable)
 {
-    TestAllocateAnyPages();
-    TestAllocateSpecificAddress();
+    // TestAllocateAnyPages();
+    // TestAllocateSpecificAddress();
+    TestMap();
     return EFI_SUCCESS;
 }
