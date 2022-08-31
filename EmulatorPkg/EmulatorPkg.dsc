@@ -293,6 +293,7 @@
 Chapter03/MyHelloWorld/MyHelloWorld.inf
 Chapter05/TryGST/trygst.inf
 Chapter05/TryMemoryAlloc/trymemoryalloc.inf
+Chapter05/TryExitBootServices/tryexitbootservices.inf
 
 !if "IA32" in $(ARCH) || "X64" in $(ARCH)
   !if "MSFT" in $(FAMILY) || $(WIN_HOST_BUILD) == TRUE

@@ -1,0 +1,16 @@
+[Defines]
+    INF_VERSION = 0x00010005
+    BASE_NAME = TryExitBootServices
+    FILE_GUID = 7a66af1d-d005-4545-8ed8-d1b2b618d8d3
+    MODULE_TYPE = UEFI_APPLICATION
+    VERSION_STRING = 1.0
+    ENTRY_POINT = UefiMain
+[Sources]
+    tryexitbootservices.c
+[Packages]
+    MdePkg/MdePkg.dec
+[LibraryClasses]
+    UefiApplicationEntryPoint
+    UefiLib
+    DebugLib
+    UefiBootServicesTableLib
