@@ -1,0 +1,20 @@
+[Defines]
+  INF_VERSION = 0x00010005
+  BASE_NAME = GRTGetVariable
+  FILE_GUID = b3e9a6ec-838b-4410-a4f1-cc2034eea8ae
+  MODULE_TYPE = UEFI_APPLICATION
+  VERSION_STRING = 1.0
+  ENTRY_POINT = UefiMain
+[Sources]
+  grtgetvariable.c
+[Packages]
+  MdePkg/MdePkg.dec
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  UefiBootServicesTableLib
+  DebugLib
+  MemoryAllocationLib
+  UefiRuntimeServicesTableLib
+  BaseMemoryLib
+  
