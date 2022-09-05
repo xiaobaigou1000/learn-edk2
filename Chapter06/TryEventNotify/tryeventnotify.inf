@@ -1,0 +1,14 @@
+[Defines]
+  INF_VERSION = 0x00010005
+  BASE_NAME = TryEventNotify
+  FILE_GUID = fb080481-4235-428e-a7b0-e83875e40bbf
+  MODULE_TYPE = UEFI_APPLICATION
+  VERSION_STRING = 1.0
+  ENTRY_POINT = UefiMain
+[Sources]
+  tryeventnotify.c
+[Packages]
+  MdePkg/MdePkg.dec
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib

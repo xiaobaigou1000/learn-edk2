@@ -702,6 +702,7 @@ Chapter05/TryExitBootServices/tryexitbootservices.inf
 Chapter05/RuntimeServiceGetTime/runtimeservicegettime.inf
 Chapter05/RuntimeServiceGetVariable/grtgetvariable.inf
 Chapter06/WaitInputWithTimeout/waitinputwithtimeout.inf
+Chapter06/TryEventNotify/tryeventnotify.inf
 
 
   OvmfPkg/ResetVector/ResetVector.inf
