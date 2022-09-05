@@ -695,6 +695,15 @@
 #
 ################################################################################
 [Components]
+Chapter03/MyHelloWorld/MyHelloWorld.inf
+Chapter05/TryGST/trygst.inf
+Chapter05/TryMemoryAlloc/trymemoryalloc.inf
+Chapter05/TryExitBootServices/tryexitbootservices.inf
+Chapter05/RuntimeServiceGetTime/runtimeservicegettime.inf
+Chapter05/RuntimeServiceGetVariable/grtgetvariable.inf
+Chapter06/WaitInputWithTimeout/waitinputwithtimeout.inf
+
+
   OvmfPkg/ResetVector/ResetVector.inf
 
   #
