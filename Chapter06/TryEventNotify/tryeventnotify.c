@@ -3,25 +3,23 @@
 #include <Library/UefiLib.h>
 #include <Library/UefiBootServicesTableLib.h>
 
-EFI_EVENT helloEvent = NULL;
-
-VOID MyEventNotify(IN EFI_EVENT event, IN VOID *context)
+VOID EFIAPI MyEventNotify(IN EFI_EVENT event, IN VOID *context)
 {
     static UINTN count = 0;
     Print(L"My event notify times: %d\n", count);
     ++count;
     if (count > 5)
     {
-        gBS->SignalEvent(helloEvent);
+        gBS->SignalEvent(event);
     }
 }
 
-EFI_STATUS TestNotify()
+EFI_STATUS EFIAPI TestNotify()
 {
-    
-    gBS->CreateEvent(EVT_NOTIFY_WAIT, TPL_NOTIFY, (EFI_EVENT_NOTIFY)MyEventNotify, NULL, &helloEvent);
+    EFI_EVENT event = NULL;
+    gBS->CreateEvent(EVT_NOTIFY_WAIT, TPL_NOTIFY, (EFI_EVENT_NOTIFY)MyEventNotify, NULL, &event);
     UINTN index = 0;
-    gBS->WaitForEvent(1, &helloEvent, &index);
+    gBS->WaitForEvent(1, &event, &index);
     return EFI_SUCCESS;
 }
 

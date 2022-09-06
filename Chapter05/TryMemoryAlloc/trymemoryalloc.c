@@ -4,7 +4,7 @@
 #include <Library/DebugLib.h>
 #include <Library/UefiBootServicesTableLib.h>
 
-EFI_STATUS TestAllocateAnyPages()
+EFI_STATUS EFIAPI TestAllocateAnyPages()
 {
     EFI_PHYSICAL_ADDRESS pages;
     EFI_STATUS status = gBS->AllocatePages(AllocateAnyPages, EfiBootServicesData, 3, &pages);
@@ -26,7 +26,7 @@ EFI_STATUS TestAllocateAnyPages()
     return status;
 }
 
-EFI_STATUS TestAllocateSpecificAddress()
+EFI_STATUS EFIAPI TestAllocateSpecificAddress()
 {
     EFI_PHYSICAL_ADDRESS pages = 1024 * 1024 * 10;
     EFI_STATUS status = gBS->AllocatePages(AllocateAddress, EfiBootServicesData, 3, &pages);
@@ -48,7 +48,7 @@ EFI_STATUS TestAllocateSpecificAddress()
     return status;
 }
 
-EFI_STATUS TestMap()
+EFI_STATUS EFIAPI TestMap()
 {
     UINTN memoryMapSize = 0;
     EFI_MEMORY_DESCRIPTOR *memoryMap = NULL;
