@@ -1,12 +1,12 @@
 [Defines]
   INF_VERSION = 0x00010005
-  BASE_NAME = TryEventTimer
-  FILE_GUID = 75ee968c-937f-4b0c-a8f7-6199724c2d2c
+  BASE_NAME = TryEventNotifySignal
+  FILE_GUID = 17f9e892-2a84-4609-b6ea-db3d7198d30f
   MODULE_TYPE = UEFI_APPLICATION
   VERSION_STRING = 1.0
   ENTRY_POINT = UefiMain
 [Sources]
-  tryeventtimer.c
+  tryeventnotifysignal.c
 [Packages]
   MdePkg/MdePkg.dec
 [LibraryClasses]
@@ -14,3 +14,4 @@
   UefiLib
   DebugLib
   UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
