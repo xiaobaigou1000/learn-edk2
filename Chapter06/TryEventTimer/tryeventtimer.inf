@@ -1,0 +1,14 @@
+[Defines]
+  INF_VERSION = 0x00010005
+  BASE_NAME = TryEventTimer
+  FILE_GUID = 75ee968c-937f-4b0c-a8f7-6199724c2d2c
+  MODULE_TYPE = UEFI_APPLICATION
+  VERSION_STRING = 1.0
+  ENTRY_POINT = UefiMain
+[Sources]
+  tryeventtimer.c
+[Packages]
+  MdePkg/MdePkg.dec
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib

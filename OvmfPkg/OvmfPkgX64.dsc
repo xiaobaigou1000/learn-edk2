@@ -703,6 +703,7 @@ Chapter05/RuntimeServiceGetTime/runtimeservicegettime.inf
 Chapter05/RuntimeServiceGetVariable/grtgetvariable.inf
 Chapter06/WaitInputWithTimeout/waitinputwithtimeout.inf
 Chapter06/TryEventNotify/tryeventnotify.inf
+Chapter06/TryEventTimer/tryeventtimer.inf
 
 
   OvmfPkg/ResetVector/ResetVector.inf
