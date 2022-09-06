@@ -16,7 +16,6 @@ EFI_STATUS EFIAPI UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *Syste
         Print(L"Error");
         return EFI_UNSUPPORTED;
     }
-    // return EFI_SUCCESS;
     if (eventIndex == 0)
     {
         EFI_INPUT_KEY efiInputKey;
