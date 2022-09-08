@@ -705,6 +705,7 @@ Chapter06/WaitInputWithTimeout/waitinputwithtimeout.inf
 Chapter06/TryEventNotify/tryeventnotify.inf
 Chapter06/TryEventTimer/tryeventtimer.inf
 Chapter06/TryEventNotifySignal/tryeventnotifysignal.inf
+Chapter06/TryMouseEvent/trymouseevent.inf
 
   OvmfPkg/ResetVector/ResetVector.inf
 
