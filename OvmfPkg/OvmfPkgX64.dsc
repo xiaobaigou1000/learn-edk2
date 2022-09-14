@@ -706,6 +706,7 @@ Chapter06/TryEventNotify/tryeventnotify.inf
 Chapter06/TryEventTimer/tryeventtimer.inf
 Chapter06/TryEventNotifySignal/tryeventnotifysignal.inf
 Chapter06/TryMouseEvent/trymouseevent.inf
+Chapter07/TryGetDevicePath/devicepath.inf
 
   OvmfPkg/ResetVector/ResetVector.inf
 

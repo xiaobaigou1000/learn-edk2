@@ -1,0 +1,23 @@
+[Defines]
+  INF_VERSION = 0x00010005
+  BASE_NAME = TryGetDevicePath
+  FILE_GUID = ddbe8f18-2e6c-47ed-b8c7-94947baec3dd
+  MODULE_TYPE = UEFI_APPLICATION
+  VERSION_STRING = 1.0
+  ENTRY_POINT = UefiMain
+[Sources]
+  devicepath.c
+[Packages]
+  MdePkg/MdePkg.dec
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  DebugLib
+  UefiBootServicesTableLib
+  DevicePathLib
+  
+[Protocols]
+  gEfiSimpleFileSystemProtocolGuid
+  gEfiDevicePathProtocolGuid
+  gEfiDevicePathToTextProtocolGuid
+  gEfiDiskIoProtocolGuid
