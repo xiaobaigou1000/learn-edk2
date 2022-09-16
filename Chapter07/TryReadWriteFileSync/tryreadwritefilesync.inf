@@ -1,0 +1,24 @@
+[Defines]
+  INF_VERSION = 0x00010005
+  BASE_NAME = TryReadWriteFileSync
+  FILE_GUID = d0a3fea6-818b-425a-b2ef-9105810b6798
+  MODULE_TYPE = UEFI_APPLICATION
+  VERSION_STRING = 1.0
+  ENTRY_POINT = UefiMain
+[Sources]
+  tryreadwritefilesync.c
+[Packages]
+  MdePkg/MdePkg.dec
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  DebugLib
+  UefiBootServicesTableLib
+  DevicePathLib
+  BaseLib
+  
+[Protocols]
+  gEfiSimpleFileSystemProtocolGuid
+  gEfiDevicePathProtocolGuid
+  gEfiDevicePathToTextProtocolGuid
+  gEfiDiskIoProtocolGuid
