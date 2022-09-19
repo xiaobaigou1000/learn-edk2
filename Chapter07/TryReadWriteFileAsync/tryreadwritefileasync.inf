@@ -1,0 +1,24 @@
+[Defines]
+  INF_VERSION = 0x00010005
+  BASE_NAME = TryReadWriteFileAsync
+  FILE_GUID = d87d2645-d2b9-4166-9fc4-ea51bd74cc67
+  MODULE_TYPE = UEFI_APPLICATION
+  VERSION_STRING = 1.0
+  ENTRY_POINT = UefiMain
+[Sources]
+  tryreadwritefileasync.c
+[Packages]
+  MdePkg/MdePkg.dec
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  DebugLib
+  UefiBootServicesTableLib
+  DevicePathLib
+  BaseLib
+  
+[Protocols]
+  gEfiSimpleFileSystemProtocolGuid
+  gEfiDevicePathProtocolGuid
+  gEfiDevicePathToTextProtocolGuid
+  gEfiDiskIoProtocolGuid
