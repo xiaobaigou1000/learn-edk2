@@ -729,6 +729,8 @@ Chapter06/TryMouseEvent/trymouseevent.inf
 Chapter07/TryGetDevicePath/devicepath.inf
 Chapter07/TryReadWriteFileSync/tryreadwritefilesync.inf
 Chapter07/TryReadWriteFileAsync/tryreadwritefileasync.inf
+Chapter08/TrySimpleProtocol/trysimpleprotocol.inf
+Chapter08/UseSimpleProtocol/usesimpleprotocol.inf
 
   OvmfPkg/ResetVector/ResetVector.inf
 

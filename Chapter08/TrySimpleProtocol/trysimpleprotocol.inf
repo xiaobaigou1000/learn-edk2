@@ -1,0 +1,25 @@
+[Defines]
+  INF_VERSION = 0x00010005
+  BASE_NAME = TrySimpleProtocol
+  FILE_GUID = 11cf849c-26a9-4aff-ac1a-36ecf71e958d
+  MODULE_TYPE = UEFI_DRIVER
+  VERSION_STRING = 1.0
+  ENTRY_POINT = InitSimpleProtocol
+
+[Sources]
+  trysimpleprotocol.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  Chapter08/Chapter08.dec
+
+[LibraryClasses]
+  UefiDriverEntryPoint
+  UefiLib
+  DebugLib
+  UefiBootServicesTableLib
+  BaseLib
+  
+[Protocols]
+  gEfiSimpleProtocolGUID
+  

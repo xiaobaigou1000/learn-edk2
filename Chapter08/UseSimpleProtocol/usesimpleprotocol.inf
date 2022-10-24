@@ -1,0 +1,26 @@
+[Defines]
+  INF_VERSION = 0x00010005
+  BASE_NAME = UseSimpleProtocol
+  FILE_GUID = cbabc549-2ffb-4e12-b895-58c2c5b91bc8
+  MODULE_TYPE = UEFI_APPLICATION
+  VERSION_STRING = 1.0
+  ENTRY_POINT = UefiMain
+[Sources]
+  usesimpleprotocol.c
+[Packages]
+  MdePkg/MdePkg.dec
+  Chapter08/Chapter08.dec
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  DebugLib
+  UefiBootServicesTableLib
+  DevicePathLib
+  BaseLib
+  
+[Protocols]
+  gEfiSimpleProtocolGUID
+  gEfiSimpleFileSystemProtocolGuid
+  gEfiDevicePathProtocolGuid
+  gEfiDevicePathToTextProtocolGuid
+  gEfiDiskIoProtocolGuid
