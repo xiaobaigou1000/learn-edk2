@@ -1,0 +1,25 @@
+[Defines]
+  INF_VERSION = 0x00010005
+  BASE_NAME = TryGraphicsOutput
+  FILE_GUID = 0b04ce64-d41f-44ff-944c-93645542040c
+  MODULE_TYPE = UEFI_APPLICATION
+  VERSION_STRING = 1.0
+  ENTRY_POINT = UefiMain
+[Sources]
+  trygraphicsoutput.c
+[Packages]
+  MdePkg/MdePkg.dec
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  DebugLib
+  UefiBootServicesTableLib
+  DevicePathLib
+  BaseLib
+  
+[Protocols]
+  gEfiSimpleFileSystemProtocolGuid
+  gEfiDevicePathProtocolGuid
+  gEfiDevicePathToTextProtocolGuid
+  gEfiDiskIoProtocolGuid
+  gEfiGraphicsOutputProtocolGuid
