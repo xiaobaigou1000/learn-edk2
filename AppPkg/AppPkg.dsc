@@ -105,6 +105,7 @@
   AppPkg/Applications/Main/Main.inf          # Simple invocation. No other LibC functions.
   AppPkg/Applications/Enquire/Enquire.inf    #
   AppPkg/Applications/ArithChk/ArithChk.inf  #
+  TryUsingLibStd/tryusinglibstd.inf
 
 #### A simple fuzzer for OrderedCollectionLib, in particular for
 #### BaseOrderedCollectionRedBlackTreeLib.
