@@ -17,6 +17,8 @@
   LibStdio
   LibMath
   UefiBootServicesTableLib
+  UefiLib
+  DebugLib
   
 [Protocols]
   gEfiSimpleFileSystemProtocolGuid
