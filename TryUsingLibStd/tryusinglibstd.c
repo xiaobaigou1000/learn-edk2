@@ -49,9 +49,12 @@ int main(int argc, char **argv)
 
     EFI_GRAPHICS_OUTPUT_PROTOCOL *gop = NULL;
     gBS->LocateProtocol(&gEfiGraphicsOutputProtocolGuid, NULL, (void **)&gop);
-    gop->SetMode(gop, 0);
-    gop->Blt(gop, pixel, EfiBltBufferToVideo, 0, 0, 0, 0, width, height, 0);
-
+    // gop->SetMode(gop, 0);
+    EFI_STATUS status = gop->Blt(gop, pixel, EfiBltBufferToVideo, 0, 0, 0, 0, width, height, 0);
+    if (status != EFI_SUCCESS)
+    {
+        Print(L"Blt Error: %d\n", status);
+    }
     UINTN index = 0;
     gBS->WaitForEvent(1, &gST->ConIn->WaitForKey, &index);
 
