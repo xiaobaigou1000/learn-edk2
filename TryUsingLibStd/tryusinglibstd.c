@@ -13,26 +13,21 @@
 
 int main(int argc, char **argv)
 {
-
     EFI_SIMPLE_FILE_SYSTEM_PROTOCOL *simpleFileSystemProtocol = NULL;
     gBS->LocateProtocol(&gEfiSimpleFileSystemProtocolGuid, NULL, (void **)&simpleFileSystemProtocol);
     EFI_FILE_PROTOCOL *root = NULL;
     simpleFileSystemProtocol->OpenVolume(simpleFileSystemProtocol, &root);
 
     EFI_FILE_PROTOCOL *file = NULL;
-
     root->Open(root, &file, L"hello.png", EFI_FILE_MODE_READ, EFI_FILE_READ_ONLY);
-
     EFI_FILE_INFO *fileInfo = NULL;
     UINTN efiFileInfoSize = sizeof(EFI_FILE_INFO) + sizeof(CHAR16) * 512;
     gBS->AllocatePool(EfiBootServicesData, efiFileInfoSize, (void **)&fileInfo);
     file->GetInfo(file, &gEfiFileInfoGuid, &efiFileInfoSize, fileInfo);
     Print(L"File Name: %s, File Size: %d\n", fileInfo->FileName, fileInfo->FileSize);
-    DebugPrint(DEBUG_VERBOSE, "Read File Info\n");
 
     void *fileBuffer = NULL;
     gBS->AllocatePool(EfiBootServicesData, fileInfo->FileSize, &fileBuffer);
-
     file->Read(file, &fileInfo->FileSize, fileBuffer);
 
     int width = 0;
@@ -52,17 +47,10 @@ int main(int argc, char **argv)
         current->Red = temp;
     }
 
-    // EFI_GRAPHICS_OUTPUT_BLT_PIXEL singleColor;
-    // singleColor.Blue=0xff;
-    // singleColor.Green=0;
-    // singleColor.Red=0;
-    // singleColor.Reserved=0;
-
-    EFI_GRAPHICS_OUTPUT_PROTOCOL *gop;
-    
+    EFI_GRAPHICS_OUTPUT_PROTOCOL *gop = NULL;
     gBS->LocateProtocol(&gEfiGraphicsOutputProtocolGuid, NULL, (void **)&gop);
     gop->SetMode(gop, 0);
-    gop->Blt(gop, pixel, EfiBltVideoFill, 0, 0, 0, 0, 100, 100, 0);
+    gop->Blt(gop, pixel, EfiBltBufferToVideo, 0, 0, 0, 0, width, height, 0);
 
     UINTN index = 0;
     gBS->WaitForEvent(1, &gST->ConIn->WaitForKey, &index);
